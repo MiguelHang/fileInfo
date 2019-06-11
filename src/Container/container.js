@@ -10,8 +10,8 @@ class ContainerApp extends Component{
       return (
       <Router>
         <div>
-          <Route path={`/`} component={Home} />
-          <Route path={`/:id`} component={Child} />
+          <Route path="/" component={Home} />
+          <Route path="/:id" component={Child} />
         </div>
       </Router>
     );
