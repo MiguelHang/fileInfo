@@ -1,6 +1,5 @@
 {
   "name": "info-planos",
-  "homepage": "https://miguelhang.github.com/fileInfo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
