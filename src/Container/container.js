@@ -8,7 +8,7 @@ class ContainerApp extends Component{
   
   render(){
       return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <div>
           <Route path={`/:id`} component={Child} />
         </div>
