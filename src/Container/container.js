@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, HashRouter } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import File from '../fileInfo/fileInfo'
@@ -8,7 +8,7 @@ class ContainerApp extends Component{
   
   render(){
       return (
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <div>
           <Route path={`/:id`} component={Child} />
         </div>
