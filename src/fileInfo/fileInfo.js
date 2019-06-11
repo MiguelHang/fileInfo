@@ -17,9 +17,19 @@ import fileInfoServices from './fileInfoServices'
     }
     
     componentDidMount(){
-        fileInfoServices.getInfo(this.props.id).then( data => { 
-            this.setState({file: data.blueprint})
-            console.log(this.state)
+        fileInfoServices.getInfo(this.props.id).then( data => {
+            console.log(data)
+            if(data.code == 200){
+                this.setState({file: data.blueprint})
+            }else{
+                this.setState({file: {
+                        name:'Código no encontrado',
+                        updated:'',
+                        commentary:'',
+                        creation_time:''
+                    }
+                })
+            }
         })
     }
 
@@ -28,7 +38,7 @@ import fileInfoServices from './fileInfoServices'
             <Card style={{minWidth: 275, textAlign: 'center'}}>
                 { this.state.file.name ?
                     <CardContent>
-                    {this.state.file.updated ? <CheckmarkCircle fontSize="40%" color="green" beat={true} /> : <CloseCircle fontSize="40%" color="red" />}
+                    {this.state.file.updated ? <CheckmarkCircle fontSize="40%" color="green" /> : <CloseCircle fontSize="40%" color="red" />}
                     <Typography variant="h5" component="h2">
                         {this.state.file.name}
                     </Typography>
