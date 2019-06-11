@@ -10,6 +10,7 @@ class ContainerApp extends Component{
       return (
       <Router>
         <div>
+          <Route path={`/`} component={Home} />
           <Route path={`/:id`} component={Child} />
         </div>
       </Router>
@@ -26,6 +27,11 @@ function Child({ match }) {
         <File id={match.params.id}></File>
       </Container>
     </React.Fragment>
+  );
+}
+function Home() {
+  return (
+    <h1>No hay Código</h1>
   );
 }
 
