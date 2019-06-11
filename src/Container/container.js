@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, HashRouter } from "react-router-dom";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import File from '../fileInfo/fileInfo'
@@ -10,7 +10,7 @@ class ContainerApp extends Component{
       return (
       <Router>
         <div>
-          <Route path="/:id" component={Child} />
+          <Route path={`/:id`} component={Child} />
         </div>
       </Router>
     );
@@ -18,6 +18,7 @@ class ContainerApp extends Component{
 }
 
 function Child({ match }) {
+  console.log(match)
   return (
     <React.Fragment>
       <CssBaseline />
